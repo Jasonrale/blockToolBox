@@ -28,28 +28,25 @@ public class Message {
             "I 'm tired", "Come on", "Can't stop", "That's right", "This NFT is really nice",
             "To the moon", "I want wl", "GM", "Let America Great Again!"};
 
-    private static final Queue<String> queueCN = new LinkedBlockingQueue<>();
-
-    private static final Queue<String> queueEN = new LinkedBlockingQueue<>();
-
     private String content;
 
     private String nonce;
 
     private Boolean tts;
 
-    public static Message MessageCN() {
+    public static Message produce(Queue<String> queue, String language) {
         Random random = new Random();
         Message message = new Message()
-                .setNonce("839436" + (random.nextInt(888888) + 100000) + "356314")
+                .setNonce("859436" + (random.nextInt(888888) + 100000) + "356314")
                 .setTts(false);
 
-        String content = RANDOM_CONTENT_CN[random.nextInt(RANDOM_CONTENT_CN.length - 1)];
+        String content = "Hello";
         boolean flag = true;
         do {
-            for (String text : queueCN) {
+            for (String text : queue) {
                 if (content.equals(text)) {
-                    content = RANDOM_CONTENT_CN[random.nextInt(RANDOM_CONTENT_CN.length - 1)];
+                    content = language.equals("cn") ? RANDOM_CONTENT_CN[random.nextInt(RANDOM_CONTENT_CN.length - 1)]
+                     : RANDOM_CONTENT_EN[random.nextInt(RANDOM_CONTENT_EN.length - 1)];
                     flag = false;
                     break;
                 }
@@ -59,38 +56,11 @@ public class Message {
 
         } while (!flag);
 
-        if (queueCN.size() == 20) {
-            queueCN.remove();
+        if (queue.size() == 20) {
+            queue.remove();
         }
-        queueCN.offer(content);
-        return message.setContent(content);
-    }
+        queue.offer(content);
 
-    public static Message MessageEn() {
-        Random random = new Random();
-        Message message = new Message()
-                .setNonce("839436" + (random.nextInt(888888) + 100000) + "356314")
-                .setTts(false);
-
-        String content = RANDOM_CONTENT_EN[random.nextInt(RANDOM_CONTENT_EN.length - 1)];
-        boolean flag = true;
-        do {
-            for (String text : queueEN) {
-                if (content.equals(text)) {
-                    content = RANDOM_CONTENT_EN[random.nextInt(RANDOM_CONTENT_EN.length - 1)];
-                    flag = false;
-                    break;
-                }
-
-                flag = true;
-            }
-
-        } while (!flag);
-
-        if (queueEN.size() == 20) {
-            queueEN.remove();
-        }
-        queueEN.offer(content);
         return message.setContent(content);
     }
 }

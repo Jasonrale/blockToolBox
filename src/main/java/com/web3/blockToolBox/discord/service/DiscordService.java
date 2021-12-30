@@ -8,7 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
+import java.util.Queue;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +29,7 @@ public class DiscordService {
             headers.add("authorization", token);
             headers.add("content-type", "application/json");
             RestTemplateUtils.postForObject(url,
-                    JSON.toJSONString(language.equals("CN") ? Message.MessageCN() : Message.MessageEn()),
+                    JSON.toJSONString(Message.produce(new LinkedBlockingQueue<>(), language)),
                     headers, JSONObject.class);
         }, 3, duration, TimeUnit.MILLISECONDS);
     }
