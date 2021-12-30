@@ -23,13 +23,14 @@ public class DiscordService {
 
     public void sendCircleMessage(String channelId, String language, long duration, String token) throws InterruptedException {
         String url = String.format(sendMessageUrlTemplate, channelId);
+        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
         timeTaskExecutor.scheduleAtFixedRate(() -> {
             HttpHeaders headers = new HttpHeaders();
             headers.add("authorization", token);
             headers.add("content-type", "application/json");
             RestTemplateUtils.postForObject(url,
-                    JSON.toJSONString(Message.produce(new LinkedBlockingQueue<>(), language)),
+                    JSON.toJSONString(Message.produce(queue, language)),
                     headers, JSONObject.class);
         }, 1000, duration, TimeUnit.MILLISECONDS);
     }

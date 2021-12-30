@@ -3,11 +3,8 @@ package com.web3.blockToolBox.discord.entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.LinkedBlockingQueue;
 
 @Data
 @Accessors(chain = true)
