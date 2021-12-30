@@ -1,0 +1,14 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /blockToolBox
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: blockToolBox
+
+logging:
+  level:
+    root: "info"
