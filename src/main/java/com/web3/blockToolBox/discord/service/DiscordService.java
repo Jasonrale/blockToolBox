@@ -31,6 +31,6 @@ public class DiscordService {
             RestTemplateUtils.postForObject(url,
                     JSON.toJSONString(Message.produce(new LinkedBlockingQueue<>(), language)),
                     headers, JSONObject.class);
-        }, 3, duration, TimeUnit.MILLISECONDS);
+        }, 1000, duration, TimeUnit.MILLISECONDS);
     }
 }
