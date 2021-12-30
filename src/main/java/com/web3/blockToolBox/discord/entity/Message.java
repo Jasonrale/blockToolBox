@@ -23,8 +23,8 @@ public class Message {
 
     private static final String [] RANDOM_CONTENT_EN = {
             "Chatting all day", "Take your time", "I 'm coming", "Cute puppy", "Welcome to there",
-            "Let 's go!", "Great project", "WAGMI", "Hold on", "Yeah",
-            "Nice", "lol", "Good luck", "It's too slow", "Talk to earn",
+            "Let's go!", "Great project", "WAGMI", "Hold on", "Yeah",
+            "Nice", "lol", "Good luck", "It's too slow", "Let's Talk to white",
             "I 'm tired", "Come on", "Can't stop", "That's right", "This NFT is really nice",
             "To the moon", "I want wl", "GM", "Let America Great Again!"};
 
