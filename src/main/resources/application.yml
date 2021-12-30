@@ -1,7 +1,7 @@
 server:
   port: 8888
   servlet:
-    context-path: /toobox
+    context-path: /toolbox
   tomcat:
     uri-encoding: UTF-8
 
