@@ -22,11 +22,11 @@ public class Message {
             "任务太难了", "好难邀请", "肝动天，肝动地，就是肝动不了你"};
 
     private static final String [] RANDOM_CONTENT_EN = {
-            "Chatting all day", "well", "I 'm coming", "cute puppy", "welcome to there",
-            "Let 's go!", "great project", "wagmi", "hodl", "yeah",
-            "nice", "lol", "2 minute is too long", "yes", "talk to earn",
-            "I 'm tired", "what", "can't stop", "welcome", "233333",
-            "to the moon", "I want wl"};
+            "Chatting all day", "Take your time", "I 'm coming", "Cute puppy", "Welcome to there",
+            "Let 's go!", "Great project", "WAGMI", "Hold on", "Yeah",
+            "Nice", "lol", "Good luck", "It's too slow", "Talk to earn",
+            "I 'm tired", "Come on", "Can't stop", "That's right", "This NFT is really nice",
+            "To the moon", "I want wl", "GM", "Let America Great Again!"};
 
     private static final Queue<String> queueCN = new LinkedBlockingQueue<>();
 
