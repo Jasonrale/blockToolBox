@@ -18,11 +18,11 @@ public class Message {
             "大佬们别这么肝啊", "肝动天，肝动地，就是肝动不了你"};
 
     private static final String [] RANDOM_CONTENT_EN = {
-            "Chatting all day", "Take your time", "I 'm coming", "Cute puppy", "Welcome to there",
+            "Chatting all day", "Take your time", "I 'm coming", "Welcome",
             "Let's go!", "Great project", "WAGMI", "Hold on", "Yeah",
-            "Nice", "lol", "Good luck", "It's too slow", "Let's Talk to white",
+            "Nice", "lol", "Good luck", "It's too slow", "Be active",
             "I 'm tired", "Come on", "Can't stop", "That's right", "This NFT is really nice",
-            "To the moon", "I want wl", "GM", "Let America Great Again!"};
+            "To the moon", "I want wl", "GM"};
 
     private String content;
 
@@ -36,7 +36,7 @@ public class Message {
                 .setNonce("859436" + (random.nextInt(888888) + 100000) + "356314")
                 .setTts(false);
 
-        String content = "Hello";
+        String content = ":joy:";
         boolean flag = true;
         do {
             for (String text : queue) {

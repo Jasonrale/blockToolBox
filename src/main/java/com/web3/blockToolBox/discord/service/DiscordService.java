@@ -33,7 +33,12 @@ public class DiscordService {
             headers.add("content-type", "application/json");
 
             List<Long> ids = param.getChannelId();
-            String url = String.format(sendMessageUrlTemplate, ids.get(random.nextInt(ids.size() - 1)));
+            String url;
+            if (ids.size() == 1) {
+                url = String.format(sendMessageUrlTemplate, ids.get(0));
+            } else {
+                url = String.format(sendMessageUrlTemplate, ids.get(random.nextInt(ids.size() - 1)));
+            }
             RestTemplateUtils.postForObject(url,
                     JSON.toJSONString(Message.produce(queue, param.getLanguage())),
                     headers, JSONObject.class);
