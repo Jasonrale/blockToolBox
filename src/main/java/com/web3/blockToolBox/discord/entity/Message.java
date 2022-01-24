@@ -15,8 +15,7 @@ public class Message {
             "nice", "哈哈哈哈", "优秀", "确实是这样", "666",
             "有点累了", "真的么", "想要白名单", "233333", "肝硬化了",
             "慢慢来吧", "加油啊，一起卷", "升得好慢啊", "都是大佬啊",
-            "大佬们别这么肝啊", "还有一半白名单", "任务太难了", "这个nft挺好看",
-            "肝动天，肝动地，就是肝动不了你"};
+            "大佬们别这么肝啊", "肝动天，肝动地，就是肝动不了你"};
 
     private static final String [] RANDOM_CONTENT_EN = {
             "Chatting all day", "Take your time", "I 'm coming", "Cute puppy", "Welcome to there",
