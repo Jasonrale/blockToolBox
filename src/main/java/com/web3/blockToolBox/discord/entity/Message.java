@@ -67,7 +67,7 @@ public class Message {
                 .setNonce("859436" + (random.nextInt(888888) + 100000) + "356314")
                 .setTts(false);
 
-        String content = ":joy:";
+        String content = "好多人啊";
         boolean flag = true;
         do {
             for (String text : queue) {
