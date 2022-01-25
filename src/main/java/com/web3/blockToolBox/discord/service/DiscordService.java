@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.web3.blockToolBox.common.RestTemplateUtils;
 import com.web3.blockToolBox.discord.entity.BotStartParam;
+import com.web3.blockToolBox.discord.entity.Channel;
 import com.web3.blockToolBox.discord.entity.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -32,16 +33,20 @@ public class DiscordService {
             headers.add("authorization", param.getAuthorization());
             headers.add("content-type", "application/json");
 
-            List<Long> ids = param.getChannelId();
+            List<Channel> channels = param.getChannels();
             String url;
-            if (ids.size() == 1) {
-                url = String.format(sendMessageUrlTemplate, ids.get(0));
+            Channel channel;
+            if (channels.size() == 1) {
+                channel = channels.get(0);
+                url = String.format(sendMessageUrlTemplate, channel.getChannelId());
             } else {
-                url = String.format(sendMessageUrlTemplate, ids.get(random.nextInt(ids.size() - 1)));
+                channel = channels.get(random.nextInt(channels.size() - 1));
+                url = String.format(sendMessageUrlTemplate, channel);
             }
             RestTemplateUtils.postForObject(url,
-                    JSON.toJSONString(Message.produce(queue, param.getLanguage())),
+                    JSON.toJSONString(Message.produce(queue, channel.getLanguage())),
                     headers, JSONObject.class);
+
         }, 1000, param.getDuration(), TimeUnit.MILLISECONDS);
     }
 }

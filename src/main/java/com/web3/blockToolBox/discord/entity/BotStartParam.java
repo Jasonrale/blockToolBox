@@ -6,9 +6,7 @@ import java.util.List;
 
 @Data
 public class BotStartParam {
-    private List<Long> channelId;
-
-    private String language;
+    private List<Channel> channels;
 
     private Long duration;
 
