@@ -38,10 +38,10 @@ public class DiscordService {
             Channel channel;
             if (channels.size() == 1) {
                 channel = channels.get(0);
-                url = String.format(sendMessageUrlTemplate, channel.getChannelId());
+                url = String.format(sendMessageUrlTemplate, channel.getId());
             } else {
                 channel = channels.get(random.nextInt(channels.size() - 1));
-                url = String.format(sendMessageUrlTemplate, channel);
+                url = String.format(sendMessageUrlTemplate, channel.getId());
             }
             RestTemplateUtils.postForObject(url,
                     JSON.toJSONString(Message.produce(queue, channel.getLanguage())),
