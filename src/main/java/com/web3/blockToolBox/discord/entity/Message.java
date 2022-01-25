@@ -11,7 +11,7 @@ import java.util.Random;
 public class Message {
     private static final String [] RANDOM_CONTENT_CN1 = {
             "最近亏麻了", "卷起来", "坚持住", "等白名单", "好活跃啊大家",
-            "再加把劲冲", "活跃起来", "Be active", "努力肝白名单", "啊这",
+            "再加把劲冲", "活跃起来", "Be active", "努力肝白名单", "这项目爆火",
             "加油啊 現在开始都不算晚", "哈哈哈哈", "厉害了", "确实是这样", "Good Luck",
             "想要白名单", "233333", "还有很多白名单", "卧槽",
             "慢慢来吧", "加油啊，一起卷", "升得好慢啊", "大佬们等等我",
@@ -67,7 +67,7 @@ public class Message {
                 .setNonce("859436" + (random.nextInt(888888) + 100000) + "356314")
                 .setTts(false);
 
-        String content = "好多人啊";
+        String content = "这项目要起飞";
         boolean flag = true;
         do {
             for (String text : queue) {
