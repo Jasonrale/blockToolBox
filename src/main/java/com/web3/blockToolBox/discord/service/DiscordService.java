@@ -3,12 +3,11 @@ package com.web3.blockToolBox.discord.service;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.web3.blockToolBox.common.RestTemplateUtils;
-import com.web3.blockToolBox.discord.entity.Message;
+import com.web3.blockToolBox.entity.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
-import java.util.Queue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;

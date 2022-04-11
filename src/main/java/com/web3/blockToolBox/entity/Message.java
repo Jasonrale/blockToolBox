@@ -1,4 +1,4 @@
-package com.web3.blockToolBox.discord.entity;
+package com.web3.blockToolBox.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -12,10 +12,10 @@ public class Message {
     private static final String [] RANDOM_CONTENT_CN = {
             "冲冲冲", "卷起来", "坚持住", "等白名单", "卷饿了我",
             "再加把劲冲", "升级真特么慢", "努力肝白名单", "啊这", "你们升得好快啊",
-            "nice", "哈哈哈哈", "优秀", "确实是这样", "666",
+            "nice", "哈哈哈哈", "优秀", "确实这样", "666",
             "有点累了", "真的么", "想要白名单", "233333", "肝硬化了",
             "慢慢来吧", "加油啊，一起卷", "升得好慢啊", "都是大佬啊",
-            "大佬们别这么肝啊", "还有一半白名单", "任务太难了", "这个nft挺好看",
+            "大佬们别这么肝啊", "任务太难了", "这个nft挺好看", "就是玩",
             "肝动天，肝动地，就是肝动不了你"};
 
     private static final String [] RANDOM_CONTENT_EN = {
