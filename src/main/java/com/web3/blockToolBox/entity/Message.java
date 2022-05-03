@@ -34,7 +34,7 @@ public class Message {
     public static Message produce(Queue<String> queue, String language) {
         Random random = new Random();
         Message message = new Message()
-                .setNonce("859436" + (random.nextInt(888888) + 100000) + "356314")
+                .setNonce("971130" + (random.nextInt(888888) + 100000) + "318272")
                 .setTts(false);
 
         String content = "Hello";

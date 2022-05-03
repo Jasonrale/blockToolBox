@@ -24,25 +24,15 @@ public class DiscordService {
 
     private static final ScheduledExecutorService timeTaskExecutor = Executors.newScheduledThreadPool(8);
 
-    private static int index = 1;
-
     public void sendCircleMessage(BotStartParam param) {
         LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
-        Random random = new Random();
         timeTaskExecutor.scheduleAtFixedRate(() -> {
             HttpHeaders headers = new HttpHeaders();
             headers.add("authorization", param.getAuthorization());
             headers.add("content-type", "application/json");
 
-            List<Channel> channels = param.getChannels();
+            Channel channel = param.getChannel();
             String url;
-//            Channel channel;
-//            if (channels.size() == 1) {
-//                channel = channels.get(0);
-//            } else {
-//                channel = channels.get(random.nextInt(channels.size()));
-//            }
-            Channel channel = channels.get(index++ % 2);
             url = String.format(sendMessageUrlTemplate, channel.getId());
             RestTemplateUtils.postForObject(url,
                     JSON.toJSONString(Message.produce(queue, channel.getLanguage())),

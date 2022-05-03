@@ -33,7 +33,7 @@ public class RestTemplateUtils {
     private static RestTemplate initRestTemplate() {
         //生成一个设置了连接超时时间、请求超时时间、异常最大重试次数的httpClient
         RequestConfig config = RequestConfig.custom().setConnectionRequestTimeout(10000).setConnectTimeout(10000).setSocketTimeout(60000).build();
-        HttpClientBuilder builder = HttpClientBuilder.create().setMaxConnTotal(200).setMaxConnPerRoute(50)
+        HttpClientBuilder builder = HttpClientBuilder.create().setMaxConnTotal(2000).setMaxConnPerRoute(50)
                 .setDefaultRequestConfig(config).setRetryHandler(new DefaultHttpRequestRetryHandler(5, false));
         HttpClient httpClient = builder.build();
         //使用httpClient创建一个ClientHttpRequestFactory的实现
